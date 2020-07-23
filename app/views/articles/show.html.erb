@@ -1,0 +1,10 @@
+<h1>Показ выбранной статьи</h1>
+<p>
+	Title: <%= @article.title %>
+</p>
+
+<p>
+	Description: <% @article.description %>
+  <td><%= link_to 'Редактировать', edit_article_path(@article) %></td>
+</p>
+<%= link_to 'Back', articles_path %>
