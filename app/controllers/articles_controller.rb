@@ -7,15 +7,16 @@ class ArticlesController < ApplicationController
 
 	def new
 		# Создаем статью
-		@article = Article.new
+		@article = Article.new(article_params)
 	end
 
 	def create
 		#render plain: params[:article].inspect
 		@article = Article.new(article_params)
+
 		if @article.save
 			flash[:notice] = "Статья успешно создана"
-			redirect_to articles_show(@article)
+			redirect_to articles_path(@article)
 		else
 			render 'new'
 		end
@@ -31,6 +32,7 @@ class ArticlesController < ApplicationController
 
 	def update
 		@article = Article.find(params[:id])
+
 		if @article.update(article_params)
 			flash[:notice] = "Статья успешно обновлена"
 			redirect_to article_path(@article)
@@ -53,6 +55,6 @@ class ArticlesController < ApplicationController
 
 	private
 	def article_params
-		params.require(:article).permit(:title, :description)
+		params.require(:result).permit(:title, :description)
 	end
 end
