@@ -1,13 +1,13 @@
 class ArticlesController < ApplicationController
 	def index
-		@articles = Article.all
+		@articles = Article.paginate(page: params[:page], per_page: 5)
 	end
 
 	before_action :set_article, only: [:edit, :update, :show, :destroy]
 
 	def new
 		# Создаем статью
-		@article = Article.new(article_params)
+		@article = Article.new
 	end
 
 	def create
@@ -55,6 +55,6 @@ class ArticlesController < ApplicationController
 
 	private
 	def article_params
-		params.require(:articles).permit(:title, :description)
+		params.require(:article).permit(:title, :description)
 	end
 end

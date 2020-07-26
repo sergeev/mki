@@ -11,12 +11,8 @@
    </div>
 
    <div class="article-meta-details">
-    <small>Создано: <%= article.user.username if article.user %>, <%= time_ago_in_words(article.created_at) %> ago, last updated: <%= time_ago_in_words(article.updated_at) %> ago</small>
+    <small>Создано: <%= article.user.username if article.user %>, <%= time_ago_in_words(article.created_at) %> ago, последнее обновление: <%= time_ago_in_words(article.updated_at) %> ago</small>
    </div>
-   
-   <small>Создано: <%= article.user.username if article.user %>,
-    <%= time_ago_in_words(article.created_at) %> ago, 
-    last updated: <%= time_ago_in_words(article.updated_at) %> ago</small>
 
     <div class="article-actions">
      <%= link_to "Редактировать", edit_article_path(article), class: "btn btn-xs btn-primary" %>
