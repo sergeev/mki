@@ -1,0 +1,8 @@
+<h1>Добавить квантум</h1>
+
+<%= form_for @enrollment do |f| %>
+	<%= f.label :kvantums_id %>
+	<%= f.collection_select :kvantums_id, Kvantum.all, :id, :name %>
+	<%= f.label :student_id %>
+	<%= f.collection_select :student_id, Student.all, :id, :name %>
+<% end %>

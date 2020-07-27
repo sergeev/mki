@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_25_191909) do
+ActiveRecord::Schema.define(version: 2020_07_27_043203) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,43 @@ ActiveRecord::Schema.define(version: 2020_07_25_191909) do
     t.datetime "create_at"
     t.datetime "update_at"
     t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "enrollments", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "kvantum_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "kvanta", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.boolean "organization", default: true
+    t.string "inputsCertificate"
+    t.string "surname_1_fam"
+    t.string "inputEmail"
+    t.datetime "childDateInput"
+    t.boolean "gender", default: false
+    t.string "inputsSchool"
+    t.string "inputsClass"
+    t.string "inputsKvantum"
+    t.string "teacherName"
+    t.string "groupTime"
+    t.string "inputsNameLegalRepresentative"
+    t.string "NameLegalRepresentativeTelephone"
+    t.string "inputsComments"
+    t.string "student_rang"
+    t.string "student_exp"
+    t.string "student_coin"
+    t.string "student_checked"
+    t.string "student_deleted"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

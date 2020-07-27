@@ -1,0 +1,27 @@
+<div class="row">
+	<div class="col-xs-12">
+		<%= form_for(@student, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+		<div class="form-group">
+			<div class="control-label col-sm-2">
+				<%= f.label :organization %>
+			</div>
+			<div class="col-sm-6">
+				<%= f.text_field :organization, class: "form-control", placeholder: "Название организации", autofocus: true %>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="control-label col-sm-2">
+				<%= f.label :inputsCertificate %>
+			</div>
+			<div class="col-sm-6">
+				<%= f.text_field :inputsCertificate, rows: 10, class: "form-control", placeholder: "Введите номер сертификата" %>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<%= f.submit 'Добавить студента', class: 'btn btn-primary btn-large' %>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>
