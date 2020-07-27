@@ -1,11 +1,11 @@
-<h1><%= @student.name %> страница</h1>
+<h1><%= @student.inputsCertificate %> страница</h1>
 
-<h2>Возраст: <%= @student.age %></h2>
+<h2>Возраст: <%= @student.organization %></h2>
 
 <%= button_to "Добавить в квантум", new_enrollment_path, method: :get %>
 <ul>
 	<% @student.enrollments.each do |enrollment|%>
-		<li><% enrollment.kvantoriums.name %></li>
+		<li><% enrollment.kvantoriums.inputsCertificate %></li>
 		<%= button_to "Добавить квантум", enrollment_path(enrollment), method: :delete %>
 	<% end %>
 </ul>

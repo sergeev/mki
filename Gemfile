@@ -28,6 +28,7 @@ gem 'jquery-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '3.1.7'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'devise', '~> 4.7', '>= 4.7.2'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
